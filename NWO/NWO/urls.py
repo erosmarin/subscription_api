@@ -20,7 +20,7 @@ from rest_framework import routers
 from apps.newsletter import views
 
 router = routers.DefaultRouter()
-router.register(r'subscribe', views.SubscriberViewSet)
+router.register(r'api/subscribe', views.SubscriberViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

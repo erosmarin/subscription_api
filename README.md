@@ -5,9 +5,22 @@ This API system is designed to support a subscription-based feature for a newsle
 download the repo.
 Create a virtual environment and install the required python packages.
 
+```
 python -m venv venv
 source venv/bin/activate
 pip freeze -r requirements.txt
+```
+
+make initial migrations
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
+run server
+```
+python manage.py runserver
+```
 
 
 # API Endpoints
@@ -17,14 +30,15 @@ Method: POST
 Description: This endpoint allows users to subscribe to the newsletter service.
 
 Request Body:
-
+```
 json
 {
     "email": "user@example.com",
-    "industry": "Consumer Health",
-    "source": "Social Media",
-    "subcategory": "New Product Releases"
+    "industry": ["consumer_health"],
+    "source": ["social_media"],
+    "subcategory": ["new_product_releases"]
 }
+```
 
 email (string, required): The email address of the user subscribing to the newsletter.
 industry (string, required): The industry or sector the user is interested in (e.g., Consumer Health, Beauty, Tech).
@@ -33,11 +47,3 @@ subcategory (string, required): The subcategory of content the user is intereste
 Response:
 200 OK: Successful subscription.
 400 Bad Request: Invalid request body or missing required fields.
-
-# Future Enhancements
-Implement email confirmation for new subscriptions.
-Allow users to update their subscription preferences.
-Support different delivery frequencies (e.g., daily, monthly).
-Integrate with third-party newsletter creation and delivery services.
-Conclusion
-This API system provides a robust foundation for managing newsletter subscriptions with configurable preferences. By leveraging the provided endpoints and data models, users can easily subscribe, unsubscribe, and tailor their newsletter experience according to their interests.

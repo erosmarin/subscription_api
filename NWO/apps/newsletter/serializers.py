@@ -7,5 +7,4 @@ class SubscriberSerializer(serializers.HyperlinkedModelSerializer):
     subcategory = fields.MultipleChoiceField(choices=subcategory_choices)
     class Meta:
         model = Subscriber
-
         fields = ['email', 'date', 'industry', 'source', 'subcategory']
