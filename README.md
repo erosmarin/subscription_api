@@ -8,7 +8,7 @@ Create a virtual environment and install the required python packages.
 ```
 python -m venv venv
 source venv/bin/activate
-pip freeze -r requirements.txt
+pip install -r requirements.txt
 ```
 
 make initial migrations
@@ -44,6 +44,8 @@ email (string, required): The email address of the user subscribing to the newsl
 industry (string, required): The industry or sector the user is interested in (e.g., Consumer Health, Beauty, Tech).
 source (string, required): The source from where the user prefers to receive content (e.g., Social Media, News).
 subcategory (string, required): The subcategory of content the user is interested in (e.g., New Product Releases, Mergers and Acquisitions).
+
+see apps/newsletter
 Response:
 200 OK: Successful subscription.
 400 Bad Request: Invalid request body or missing required fields.
