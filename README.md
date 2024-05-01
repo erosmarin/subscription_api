@@ -41,11 +41,17 @@ json
 ```
 
 email (string, required): The email address of the user subscribing to the newsletter.
+
 industry (string, required): The industry or sector the user is interested in (e.g., Consumer Health, Beauty, Tech).
+
 source (string, required): The source from where the user prefers to receive content (e.g., Social Media, News).
+
 subcategory (string, required): The subcategory of content the user is interested in (e.g., New Product Releases, Mergers and Acquisitions).
 
-see apps/newsletter
+see apps/newsletter for industry, source, and subcategory options
+
 Response:
+
 200 OK: Successful subscription.
+
 400 Bad Request: Invalid request body or missing required fields.
