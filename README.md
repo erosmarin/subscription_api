@@ -55,3 +55,9 @@ Response:
 200 OK: Successful subscription.
 
 400 Bad Request: Invalid request body or missing required fields.
+
+# Design
+I decided to use django and the django-rest-framework as it is a great python framework with an emphasis on reusability.
+In developing this API endpoint I leveraged the HyperlinkedModelSerializer class (in serializers.py) and the ModelViewSet class (in views.py) which provide abstractions over common serializing and view tasks, respectively.
+This enabled the logic which implemented to be very concise and easily readable.
+The main design decision I made was to overwrite the default create method of the ModelViewSet class to account for the case in which an email which is already subscribed tries to subscribe again with a different set of preferences. I handled this by updating the users preferences.
